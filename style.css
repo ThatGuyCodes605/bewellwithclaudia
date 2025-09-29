@@ -286,3 +286,40 @@ a.whatsapp-btn:active {
     max-width: 90%;
   }
 }
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);  /* start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);     /* final position */
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-out forwards;
+}
+header, nav, .content-wrapper, footer, #instagram-button, .nav-btn {
+  opacity: 0; /* hidden before animation */
+  animation: slideIn 1s ease-out forwards;
+}
+
+/* Stagger effect for nicer flow */
+header { animation-delay: 0.1s; }
+nav { animation-delay: 0.3s; }
+.content-wrapper { animation-delay: 0.5s; }
+footer { animation-delay: 0.7s; }
+.content-wrapper p,
+.content-wrapper ul,
+.top-image,
+h2 {
+  opacity: 0;
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+/* stagger them */
+.content-wrapper p:nth-of-type(1) { animation-delay: 0.6s; }
+.content-wrapper p:nth-of-type(2) { animation-delay: 0.8s; }
+.content-wrapper p:nth-of-type(3) { animation-delay: 1s; }
+
